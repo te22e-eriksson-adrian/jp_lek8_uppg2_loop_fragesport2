@@ -5,7 +5,7 @@ public class App {
         Scanner tangentbord = new Scanner(System.in);
         int poäng = 0;
 
-        /* System.out.println("Detta är en frågesport!");
+        System.out.println("Detta är en frågesport!");
         System.out.println("     ");
         System.out.println("Använd tangentbordet för att mata in svaren 'ja' eller 'nej' på frågorna.");
         
@@ -49,16 +49,22 @@ public class App {
         if (svar5.equalsIgnoreCase("ja"))
         {
             poäng++;
-        } */
+        }
         
         System.out.println("     ");
         System.out.println("Fortsättning: Nu kommer flersvarsfrågor där man svarar med siffrorna 1, 2 eller 3.");
         System.out.println("     ");
         System.out.println("Fråga 6: Vilken av dessa städer är den största räknat i befolkning?");
-        System.out.println("Svarsaltrnativ: /n 1. Chongqing (Kina) /n 2. Rio de Janeiro (Brazilien) /n 3. Tokyo (Japan)");
+        System.out.println("Svarsaltrnativ: \n 1. Chongqing (Kina) \n 2. Rio de Janeiro (Brazilien) \n 3. Tokyo (Japan)");
         System.out.print("Ditt svar: ");
         int svar6 = tangentbord.nextInt();
         tangentbord.nextLine();
+        while (svar6<1 || svar6>3) {
+            System.out.println("Du gjorde en inkorrekt inmatning, var så snäll och läs instruktionerna på nytt för att kunna besvara frågan på ett korrekt stätt.");
+            System.out.print("Ditt svar: ");
+            svar6 = tangentbord.nextInt();
+            tangentbord.nextLine();
+        }
         switch (svar6){
             case 1:
             System.out.println("Du svarade fel, rätt svar är Tokyo. Du får noll poäng.");
@@ -70,30 +76,31 @@ public class App {
             System.out.println("Du svarade rätt och får 1 poäng.");
             poäng++;
             break;
-            default:
-            System.out.println("Du gjorde en inkorrekt inmatning, var så snäll och starta om programmet och läsa instruktionerna på nytt för att kunna besvara frågan på ett korrekt stätt.");
         }
 
         System.out.println("     ");
         System.out.println("Fråga 7: Vilken av dessa städer är den mest folktäta?");
-        System.out.println("Svarsaltrnativ: /n 1. Hanoi (Vietnam) /n 2. Mumbai (Indien) /n 3. Carson City (Nevada, U.S.A.)");
+        System.out.println("Svarsaltrnativ: \n 1. Hanoi (Vietnam) \n 2. Mumbai (Indien) \n 3. Carson City (Nevada, U.S.A.)");
         System.out.print("Ditt svar: ");
         int svar7 = tangentbord.nextInt();
         tangentbord.nextLine();
-        switch (svar7){
-            case 1:
-            System.out.println("Du svarade fel, rätt svar är Mumbai. Du får noll poäng.");
-            break;
-            case 2:
-            System.out.println("Du svarade rätt och får 1 poäng.");
-            poäng++;
-            break;
-            case 3:
-            System.out.println("Du svarade fel, rätt svar är Mumbai. Du får noll poäng.");
-            break;
-            default:
-            System.out.println("Du gjorde en inkorrekt inmatning, var så snäll och starta om programmet och läsa instruktionerna på nytt för att kunna besvara frågan på ett korrekt stätt.");
-        }
+        while (svar7<1 || svar7>3){
+                System.out.println("Du gjorde en inkorrekt inmatning, var så snäll och läs instruktionerna på nytt för att kunna besvara frågan på ett korrekt stätt.");
+                System.out.print("Ditt svar: ");
+                svar7 = tangentbord.nextInt();
+                tangentbord.nextLine();
+            }
+            if (svar7==1){
+                System.out.println("Du svarade fel, rätt svar är Mumbai. Du får noll poäng.");
+            }
+            else if (svar7==2){
+                System.out.println("Du svarade rätt och får 1 poäng.");
+                poäng++;
+            }
+            else if (svar7==3){
+                System.out.println("Du svarade fel, rätt svar är Mumbai. Du får noll poäng.");
+            }
+
 
         //Resultat
         System.out.println("     ");
